@@ -9,6 +9,8 @@ export default function SideBar() {
   const sideBarState = useSelector((state) => state.sidebar.value);
   const dispatch = useDispatch();
 
+  console.log(sideBarState)
+
   useEffect(() => {
     setVisible(sideBarState);
   }, [sideBarState]);
