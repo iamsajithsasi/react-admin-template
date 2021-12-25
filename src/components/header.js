@@ -7,7 +7,7 @@ export default function Header() {
   const dispatch = useDispatch();
 
   return (
-    <div className="header-box">
+    <div className="header-box shadow">
       header
       <button
         aria-label="open sidebar"

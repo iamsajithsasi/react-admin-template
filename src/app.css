@@ -11,9 +11,25 @@
 }
 
 .fullpage {
-  min-height: calc(100vh - var(--headerSize));
+  height: calc(100vh - var(--headerSize));
+}
+
+.fullpage.noScroll {
+  overflow: hidden;
 }
 
 .fullHeight {
   min-height: 100vh;
+}
+
+.menuSidebar,
+.sectionContent {
+  overflow: auto;
+}
+
+.content-wrapper {
+  max-width: 1600px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
 }

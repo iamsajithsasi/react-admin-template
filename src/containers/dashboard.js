@@ -1,12 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function DashboardPage() {
-    return (
-        <div className='p-col'>
-            hoe
-
-            <Link to="login">Login</Link>
-        </div>
-    )
+  let x = Array.from(Array(220).keys());
+  return (
+    <>
+      dashbaord page
+      {x.map((item) => (
+        <p>{item}</p>
+      ))}
+    </>
+  );
 }

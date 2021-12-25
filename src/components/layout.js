@@ -6,10 +6,10 @@ export default function LayoutPage(props) {
   return (
     <div className="layout-wrapper">
       <Header />
-      <div className="fullpage grid-container">
-        <main className="dashboardMain p-grid">
+      <div className="grid-container content-wrapper">
+        <main className="dashboardMain fullpage noScroll p-grid">
           <SideBar />
-          {props.children}
+          <section className="sectionContent p-col h-100">{props.children}</section>
         </main>
       </div>
     </div>
