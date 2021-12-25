@@ -8,6 +8,7 @@ import "../assets/css/login.css";
 
 import * as Yup from "yup";
 import { useFormik, Form, FormikProvider } from "formik";
+import { Link } from "react-router-dom";
 
 export default function RegisterPage() {
   const LoginSchema = Yup.object().shape({
@@ -135,6 +136,10 @@ export default function RegisterPage() {
                   className="mt-4 submitBtn"
                   disabled={isSubmitting}
                 />
+              </div>
+
+              <div className="signupBox mt-3 text-center">
+                Already have an account? <Link to="/login">Log In</Link>
               </div>
               
             </Form>
