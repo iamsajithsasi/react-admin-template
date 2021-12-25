@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./assets/font/Roboto/font.css";
+import "./assets/css/bootstrap.css";
 import "./index.css";
 import "./app.css";
 import App from "./app";
@@ -10,6 +11,8 @@ import "primeicons/primeicons.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
+import "./assets/css/primereact-override.css";
+
 
 // redux
 import { store } from "./library/store/store";

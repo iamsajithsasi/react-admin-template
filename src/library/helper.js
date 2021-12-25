@@ -1,18 +1,14 @@
 import { Route, Redirect } from "react-router-dom";
-
-import SideBar from "../components/sidebar";
+import LayoutPage from "../components/layout";
 
 export const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={(props) =>
       CheckToken() ? (
-        <div className="container fullpage">
-          <main className="dashboardMain p-grid">
-            <SideBar />
-            <Component {...props} />
-          </main>
-        </div>
+        <LayoutPage>
+          <Component {...props} />
+        </LayoutPage>
       ) : (
         <Redirect to="/login" />
       )

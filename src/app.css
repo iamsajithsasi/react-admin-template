@@ -2,3 +2,18 @@
 .header-box {
   height: var(--headerSize);
 }
+
+.grid-container {
+  padding: 0.5rem;
+  padding-bottom: 0;
+  /* padding-top: 1rem;
+  flex: 1 1 0; */
+}
+
+.fullpage {
+  min-height: calc(100vh - var(--headerSize));
+}
+
+.fullHeight {
+  min-height: 100vh;
+}

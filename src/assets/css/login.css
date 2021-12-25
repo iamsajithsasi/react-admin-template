@@ -1,21 +1,33 @@
-/* FormDemo.css */
-
-.form-demo .card {
+.form-box .card {
+  width: 100%;
   min-width: 450px;
+  max-width: 550px;
 }
-.form-demo .card form {
+.form-box .card form {
   margin-top: 2rem;
 }
-.form-demo .card .p-field {
+.form-box .card .p-field {
   margin-bottom: 1.5rem;
 }
+
+.form-box .submitBtnBox {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+.form-box .forgotPassword {
+  margin-top: -1rem;
+}
+
 @media screen and (max-width: 960px) {
-  .form-demo .card {
+  .form-box .card {
     width: 80%;
   }
 }
 @media screen and (max-width: 640px) {
-  .form-demo .card {
+  .form-box .card {
     width: 100%;
     min-width: 0;
   }

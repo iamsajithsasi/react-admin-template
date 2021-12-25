@@ -1,8 +1,8 @@
 import React from "react";
 import { InputText } from "primereact/inputtext";
-import { Password } from 'primereact/password';
+import { Password } from "primereact/password";
 import { Button } from "primereact/button";
-import { InputMask } from 'primereact/inputmask';
+import { InputMask } from "primereact/inputmask";
 import { classNames } from "primereact/utils";
 import "../assets/css/login.css";
 
@@ -41,10 +41,11 @@ export default function RegisterPage() {
   const { errors, touched, isSubmitting, handleSubmit } = formik;
 
   return (
-    <div className="form-demo">
-      <div className="p-d-flex p-jc-center">
-        <div className="card">
-          <h5 className="p-text-center">Register</h5>
+    <div className="form-box">
+      <div className="fullHeight p-ai-center p-d-flex p-jc-center">
+        <div className="shadow card m-3 px-3 py-4 px-sm-4 py-sm-5">
+          <h4 className="text-center">Sign Up to App</h4>
+          <p className="text-center mb-3">Enter your details below.</p>
           <FormikProvider value={formik}>
             <Form onSubmit={handleSubmit} className="p-fluid">
               <div className="p-field">
@@ -125,14 +126,17 @@ export default function RegisterPage() {
                 )}
               </div>
 
-              <Button
-                type="submit"
-                label="Submit"
-                iconPos="right"
-                loading={isSubmitting}
-                className="p-mt-2"
-                disabled={isSubmitting}
-              />
+              <div className="submitBtnBox">
+                <Button
+                  type="submit"
+                  label="Register"
+                  iconPos="right"
+                  loading={isSubmitting}
+                  className="mt-4 submitBtn"
+                  disabled={isSubmitting}
+                />
+              </div>
+              
             </Form>
           </FormikProvider>
         </div>

@@ -7,11 +7,13 @@ export default function Header() {
   const dispatch = useDispatch();
 
   return (
-    <div className="container">
-      <div className="header-box">header</div>
+    <div className="header-box">
+      header
       <button
         aria-label="open sidebar"
-        onClick={() => { dispatch(openSideBar()) }}
+        onClick={() => {
+          dispatch(openSideBar());
+        }}
       >
         Open
       </button>

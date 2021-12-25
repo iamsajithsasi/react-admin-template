@@ -1,12 +1,13 @@
 import React from "react";
 import { InputText } from "primereact/inputtext";
-import { Password } from 'primereact/password';
+import { Password } from "primereact/password";
 import { Button } from "primereact/button";
 import { classNames } from "primereact/utils";
 import "../assets/css/login.css";
 
 import * as Yup from "yup";
 import { useFormik, Form, FormikProvider } from "formik";
+import { Link } from "react-router-dom";
 
 export default function LoginPage() {
   const LoginSchema = Yup.object().shape({
@@ -32,10 +33,11 @@ export default function LoginPage() {
   const { errors, touched, isSubmitting, handleSubmit } = formik;
 
   return (
-    <div className="form-demo">
-      <div className="p-d-flex p-jc-center">
-        <div className="card">
-          <h5 className="p-text-center">Login</h5>
+    <div className="form-box">
+      <div className="fullHeight p-ai-center p-d-flex p-jc-center">
+        <div className="shadow card m-3 px-3 py-4 px-sm-4 py-sm-5">
+          <h4 className="text-center">Sign in to App</h4>
+          <p className="text-center mb-3">Enter your details below.</p>
           <FormikProvider value={formik}>
             <Form onSubmit={handleSubmit} className="p-fluid">
               <div className="p-field">
@@ -90,14 +92,26 @@ export default function LoginPage() {
                 )}
               </div>
 
-              <Button
-                type="submit"
-                label="Submit"
-                iconPos="right"
-                loading={isSubmitting}
-                className="p-mt-2"
-                disabled={isSubmitting}
-              />
+              <div className="forgotPassword text-right">
+                <Link to="/forgot-password">
+                  <u>Forgot Password</u>
+                </Link>
+              </div>
+
+              <div className="submitBtnBox">
+                <Button
+                  type="submit"
+                  label="Login"
+                  iconPos="right"
+                  loading={isSubmitting}
+                  className="mt-4 submitBtn"
+                  disabled={isSubmitting}
+                />
+              </div>
+
+              <div className="signupBox mt-3 text-center">
+                Don’t have an account? <Link to="/register">Get started</Link>
+              </div>
             </Form>
           </FormikProvider>
         </div>

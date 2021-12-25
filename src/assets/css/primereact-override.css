@@ -1,0 +1,16 @@
+.p-float-label input:focus ~ label,
+.p-float-label input.p-filled ~ label,
+.p-float-label textarea:focus ~ label,
+.p-float-label textarea.p-filled ~ label,
+.p-float-label .p-inputwrapper-focus ~ label,
+.p-float-label .p-inputwrapper-filled ~ label {
+  top: -5px !important;
+  background: #fff !important;
+  margin: 0 !important;
+  padding: 0 5px !important;
+}
+
+input:enabled:focus,
+.p-button:focus {
+  box-shadow: none !important;
+}

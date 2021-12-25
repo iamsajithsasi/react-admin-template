@@ -4,7 +4,6 @@ import LoginPage from "./containers/login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { PrivateRoute } from "./library/helper";
 
-import Header from "./components/header";
 import ToastManager from "./components/toast";
 
 // pages
@@ -17,7 +16,6 @@ import NotfoundPage from "./containers/notfound";
 function App() {
   return (
     <>
-      <Header />
       <Router>
         <Switch>
           <PrivateRoute exact path="/" component={DashboardPage} />
