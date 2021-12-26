@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { InputText } from "primereact/inputtext";
 import { Password } from "primereact/password";
 import { Button } from "primereact/button";
@@ -8,12 +8,20 @@ import "../assets/css/login.css";
 import * as Yup from "yup";
 import { useFormik, Form, FormikProvider } from "formik";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function LoginPage() {
+  const history = useHistory();
   const LoginSchema = Yup.object().shape({
     userid: Yup.string().required("name is required"),
     password: Yup.string().required("password is required"),
   });
+
+  useEffect(() => {
+    if(localStorage.getItem("token")) {
+      history.push("/dashboard")
+    }
+  }, [])
 
   const formik = useFormik({
     initialValues: {
