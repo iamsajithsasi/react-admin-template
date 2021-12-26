@@ -1,5 +1,5 @@
 :root {
-  --headerSize: 80px;
+  --headerSize: 70px;
 }
 
 html {
@@ -15,4 +15,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-display: swap;
+  user-select: none;
 }

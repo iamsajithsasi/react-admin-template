@@ -1,3 +1,8 @@
+.sidebarWrapper {
+  box-shadow: 2px 0 4px -1px rgba(0, 0, 0, 20%), 4px 0 5px 0 rgba(0, 0, 0, 14%),
+    1px 0 10px 0 rgba(0, 0, 0, 12%);
+}
+
 .menuIcon {
   width: 100%;
   min-width: 30px;
@@ -6,5 +11,5 @@
 }
 
 a.active {
-    color: red;
+  color: red;
 }

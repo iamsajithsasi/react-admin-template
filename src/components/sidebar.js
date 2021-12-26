@@ -19,8 +19,8 @@ export default function SideBar() {
 
   return (
     <div
-      className="p-col-fixed p-d-none p-d-lg-block h-100"
-      style={{ width: "325px" }}
+      className="p-col-fixed p-d-none p-d-lg-block h-100 sidebarWrapper"
+      style={{ width: "320px" }}
     >
       {/* side drawer for mobile */}
       <Sidebar
