@@ -44,6 +44,8 @@ export default function Header() {
     e.preventDefault();
     e.stopPropagation();
 
+    document.querySelector(".emptyBoxForMenuClick").click();
+
     ref.current.toggle(e);
   };
 
@@ -55,11 +57,11 @@ export default function Header() {
   };
 
   return (
-    <div className="header-box">
-      <div className="d-flex p-ai-center">
+    <>
+      <div className="header-box d-flex p-ai-center">
         <div>
           <button
-            className="p-d-inline-block p-d-lg-none btn btn-link mr-2"
+            className="p-d-inline-block p-d-lg-none btn btn-link p-0 mr-3"
             aria-label="open sidebar"
             onClick={() => {
               dispatch(openSideBar());
@@ -69,7 +71,7 @@ export default function Header() {
           </button>
           <img src={Logo} alt="Logo" className="img img-fluid logo" />
         </div>
-        <div className="ml-auto menu-items mr-3">
+        <div className="ml-auto menu-items mr-0">
           <ul className="nav-list d-flex p-ai-center flex-row-reverse">
             <li>
               <img
@@ -120,6 +122,7 @@ export default function Header() {
           ))}
         </div>
       </OverlayPanel>
-    </div>
+      <div className="emptyBoxForMenuClick"></div>
+    </>
   );
 }

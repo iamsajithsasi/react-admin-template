@@ -10,6 +10,8 @@ import { useFormik, Form, FormikProvider } from "formik";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
+import { CheckToken } from "../library/helper";
+
 export default function LoginPage() {
   const history = useHistory();
   const LoginSchema = Yup.object().shape({
@@ -18,10 +20,10 @@ export default function LoginPage() {
   });
 
   useEffect(() => {
-    if(localStorage.getItem("token")) {
-      history.push("/dashboard")
+    if (CheckToken()) {
+      history.push("/dashboard");
     }
-  }, [])
+  }, []);
 
   const formik = useFormik({
     initialValues: {
