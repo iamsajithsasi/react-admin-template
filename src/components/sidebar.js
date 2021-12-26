@@ -6,10 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { closeSideBar } from "../library/store/sidebar";
 
 import "../assets/css/menu.css";
+import { DashboardIcon } from "../assets/icons";
 
 export default function SideBar() {
   const [drawerVisible, setDrawerVisible] = useState();
-  const [sideBarTextVisible, setSideBarTextVisible] = useState(true);
   const drawerState = useSelector((state) => state.sidebar.value);
   const dispatch = useDispatch();
 
@@ -33,23 +33,24 @@ export default function SideBar() {
       </Sidebar>
 
       {/* normal sidebar */}
-      <div
-        className={
-          "menuSidebar p-d-none p-d-lg-flex h-100" + sideBarTextVisible
-            ? "text-visible"
-            : "text-hidden"
-        }
-      >
+      <div className="menuSidebar p-d-none p-d-lg-flex h-100">
         {menuContent}
       </div>
     </div>
   );
 }
 
-const menus = [{ name: "Dashboard", route: "/", icon: "pagenotfound.svg" }];
+const menus = [
+  {
+    name: "Dashboard",
+    route: "/dashboard",
+    icon: <DashboardIcon />,
+    iconType: "component",
+  },
+];
 
 const menuContent = (
-  <>
+  <div className="menus">
     {menus.map((item, index) => (
       <NavLink
         key={index}
@@ -57,13 +58,9 @@ const menuContent = (
         className="p-d-flex p-ai-center"
         activeClassName="active"
       >
-        <img
-          src={"./assets/images/" + item.icon}
-          alt={item.name}
-          className="menuIcon mr-2"
-        />
-        <span className="menuText">{item.name}</span>
+        {item.iconType == "component" && item.icon}
+        <span className="ml-2 menuText">{item.name}</span>
       </NavLink>
     ))}
-  </>
+  </div>
 );

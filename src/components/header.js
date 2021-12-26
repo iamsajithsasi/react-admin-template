@@ -4,6 +4,7 @@ import "../assets/css/header.css";
 
 import Logo from "../assets/images/logo.png";
 import Avatar from "../assets/images/avatar.jpg";
+import { DashboardIcon } from "../assets/icons";
 
 import { useDispatch } from "react-redux";
 import { openSideBar } from "../library/store/sidebar";
@@ -22,17 +23,27 @@ export default function Header() {
 
   const userMenu = [
     {
-      label: "Navigate",
+      label: "Hi, User",
       items: [
         {
-          label: "React Website",
-          icon: "pi pi-external-link",
-          url: "https://reactjs.org/",
+          label: "Home",
+          icon: "pi pi-home",
+          command: (e) => {
+            history.push("/dashboard");
+          },
         },
         {
-          label: "Router",
-          icon: "pi pi-upload",
+          label: "Profile",
+          icon: "pi pi-user",
           command: (e) => {
+            history.push("/user-profile");
+          },
+        },
+        {
+          label: "Logout",
+          icon: "pi pi-power-off",
+          command: (e) => {
+            localStorage.clear();
             history.push("/login");
           },
         },

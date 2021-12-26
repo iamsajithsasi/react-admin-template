@@ -1,0 +1,9 @@
+.pageNotFound {
+    height: 100vh;
+}
+.pageNotFound .notFoundImg {
+    width: 90%;
+    max-width: 450px;
+    display: block;
+    margin: 0 auto;
+}
