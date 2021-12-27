@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 // import { useDispatch } from "react-redux";
 // import { toastMessage } from "../library/store/toast";
 
-export default function ToastManager() {
+export default function ToastManager(props) {
   const toast = useRef(null);
 
   const toastData = useSelector((state) => state.toast.value);
@@ -22,6 +22,17 @@ export default function ToastManager() {
       toast.current.show({ ...toastData });
     }
   }, [toastData]);
+
+  useEffect(() => {
+    if (props.severity && props.summary && props.detail) {
+      toast.current.show({
+        severity: props.severity,
+        summary: props.summary,
+        detail: props.detail,
+        life: 3000,
+      });
+    }
+  }, [props]);
 
   return (
     <div>
