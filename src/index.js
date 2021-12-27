@@ -13,6 +13,7 @@ import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
 import "./assets/css/primereact-override.css";
 
+import ErrorBoundary from "./components/errorboundary";
 
 // redux
 import { store } from "./library/store/store";
@@ -21,7 +22,9 @@ import { Provider } from "react-redux";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
