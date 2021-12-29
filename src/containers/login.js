@@ -11,9 +11,13 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 import { CheckToken } from "../library/helper";
+import { authenticateUser } from "../library/store/authentication";
+import { useDispatch } from "react-redux";
 
 export default function LoginPage() {
   const history = useHistory();
+  const dispatch = useDispatch();
+
   const LoginSchema = Yup.object().shape({
     userid: Yup.string().required("name is required"),
     password: Yup.string().required("password is required"),
@@ -33,6 +37,7 @@ export default function LoginPage() {
     validationSchema: LoginSchema,
     onSubmit: (data) => {
       console.log(data);
+      dispatch(authenticateUser(data));
 
       setTimeout(() => {
         formik.setSubmitting(false);

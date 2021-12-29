@@ -1,9 +1,10 @@
 import { baseUrl } from "./constant";
 import axios from "axios";
+import { getToken } from "./helper";
 
 // api calls
 export const getMethod = async (url) => {
-  const token = localStorage.getItem("token") || "";
+  const token = getToken() || "";
   try {
     axios
       .get(baseUrl + url, {
@@ -26,7 +27,7 @@ export const getMethod = async (url) => {
 };
 
 export const postMethod = async (url, data) => {
-  const token = localStorage.getItem("token") || "";
+  const token = getToken() || "";
   try {
     axios
       .post(baseUrl + url, {
@@ -50,7 +51,7 @@ export const postMethod = async (url, data) => {
 };
 
 export const putMethod = async (url) => {
-  const token = localStorage.getItem("token") || "";
+  const token = getToken() || "";
   try {
     axios
       .put(baseUrl + url, {
@@ -73,7 +74,7 @@ export const putMethod = async (url) => {
 };
 
 export const deleteMethod = async (url, data) => {
-  const token = localStorage.getItem("token") || "";
+  const token = getToken() || "";
   try {
     axios
       .delete(baseUrl + url, {

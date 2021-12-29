@@ -17,9 +17,13 @@ export const PrivateRoute = ({ component: Component, ...rest }) => (
 );
 
 export const CheckToken = () => {
-  var token = localStorage.getItem("token");
+  var token = getToken();
   if (token) {
     return true;
   }
   return false;
+};
+
+export const getToken = () => {
+  return localStorage.getItem("token") || null;
 };
