@@ -28,6 +28,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "cp_redirect": "cp ./_redirects ./build",
+    "build_netlify": "npm run build && npm run cp_redirect",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
